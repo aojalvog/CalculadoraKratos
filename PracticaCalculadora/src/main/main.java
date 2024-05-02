@@ -28,6 +28,14 @@ public class main {
 				int sum = OperacionesMatematicas.add(x, y);
 				System.out.println(x + " + " + y + " = " + sum);
 
+			case 2:
+				System.out.println("Introduce el valor del primer minuendo");
+				x = sc.nextInt();
+				System.out.println("Introduce el valor del segundo sustraendo");
+				y = sc.nextInt();
+				int sub = OperacionesMatematicas.subtract(x, y);
+				System.out.println(x + " - " + y + " = " + sub);
+
 			default:
 				seguir = false;
 			}
