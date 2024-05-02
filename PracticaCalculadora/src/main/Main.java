@@ -14,18 +14,32 @@ public class Main {
 		Logger logger = Logger.getLogger(Main.class.getName());
 
 		Scanner sc = new Scanner(System.in);
+		/**
+		 * Declaración de las variables que vamos a utilizar
+		 */
 		double x;
 		double y;
 		double result;
 		int option;
 		boolean seguir = true;
 
+		/**
+		 * Con este while vamos a imprimir por pantalla el menú y captar el número que
+		 * introduce el usuario por teclado para así realizar la operación
+		 * correspondiente dependiendo del número introducido.
+		 */
 		if (logger.isLoggable(Level.INFO)) {
 			while (seguir) {
+
 				logger.info(Menu.menu());
 				option = sc.nextInt();
 
 				switch (option) {
+
+				/**
+				 * Se introducen dos valores, y se llama al método add de la clase
+				 * OperacionesMatematicas para así realizar la suma y obtener el resultado.
+				 */
 
 				case 1:
 					logger.info("Introduce el valor del primer sumando");
@@ -36,6 +50,10 @@ public class Main {
 					logger.info(x + " + " + y + " = " + result);
 					break;
 
+				/**
+				 * Se introducen dos valores, y se llama al método subtract de la clase
+				 * OperacionesMatematicas para así realizar la resta y obtener el resultado.
+				 */
 				case 2:
 					logger.info("Introduce el valor del minuendo");
 					x = sc.nextDouble();
@@ -44,6 +62,12 @@ public class Main {
 					result = OperacionesMatematicas.subtract(x, y);
 					logger.info(x + " - " + y + " = " + result);
 					break;
+
+				/**
+				 * Se introducen dos valores, y se llama al método multiply de la clase
+				 * OperacionesMatematicas para así realizar la multiplicar ambos números y
+				 * obtener el resultado.
+				 */
 
 				case 3:
 					logger.info("Introduce el valor del primer producto");
@@ -54,6 +78,12 @@ public class Main {
 					logger.info(x + " * " + y + " = " + result);
 					break;
 
+				/**
+				 * Se introducen dos valores, y se llama al método divide de la clase
+				 * OperacionesMatematicas para así realizar la dividir ambos números y obtener
+				 * el resultado.
+				 */
+
 				case 4:
 					logger.info("Introduce el valor del dividendo");
 					x = sc.nextDouble();
@@ -62,6 +92,12 @@ public class Main {
 					result = OperacionesMatematicas.divide(x, y);
 					logger.info(x + " / " + y + " = " + result);
 					break;
+
+				/**
+				 * Se introducen dos valores, y se llama al método exponent de la clase
+				 * OperacionesMatematicas para así realizar la exponencial de ambos números y
+				 * obtener el resultado.
+				 */
 
 				case 5:
 					logger.info("Introduce el número");
@@ -73,12 +109,25 @@ public class Main {
 
 					break;
 
+				/**
+				 * Se introduce un valor, y se llama al método squareRoot de la clase
+				 * OperacionesMatematicas para así realizar la raíz cuadrada de un número y
+				 * obtener el resultado.
+				 */
+
 				case 6:
+
 					logger.info("Introduce el número del que quieres obtener la raíz cuadrada");
 					x = sc.nextDouble();
 					result = OperacionesMatematicas.squareRoot(x);
 					logger.info("La raíz cuadrada de " + x + " es " + result);
 					break;
+
+				/**
+				 * Se introducun valor, y se llama al método factorial de la clase
+				 * OperacionesMatematicas para así calcular el factorial de ese número y obtener
+				 * el resultado.
+				 */
 
 				case 7:
 					logger.info("Introduce el número del que quieres obtener el factorial");
@@ -87,6 +136,10 @@ public class Main {
 					logger.info(x + "! = " + result);
 					break;
 
+				/**
+				 * Por defecto al introducir un número que no se corresponda con los casos
+				 * anteriores, sale del programa.
+				 */
 				default:
 					seguir = false;
 				}
